@@ -5,7 +5,7 @@ before_install:
     - docker build -f ./docker-react-client/Dockerfile.dev -t client-test ./docker-react-client
 
 script:
-    - docker run client-test npm run test -- --coverage
+    - docker run -e CI=true client-test npm run test -- --coverage
 
 after_success:
     - docker build -t ned4ded/multi-client ./docker-react-client
