@@ -11,7 +11,7 @@ after_success:
     - docker build -t ned4ded/multi-client ./docker-react-client
     - docker build -t ned4ded/multi-server ./docker-server
     - docker build -t ned4ded/multi-worker ./docker-worker
-    - docker build -t ned4ded/multi-web-server ./docker-nginx
+    - docker build -t ned4ded/multi-web-server ./nginx
     - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_ACCESS_TOKEN
     - docker push ned4ded/multi-client
     - docker push ned4ded/multi-server
